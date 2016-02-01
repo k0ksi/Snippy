@@ -1,0 +1,9 @@
+﻿@model System.Linq.IQueryable<Snippy.Web.Models.ViewModels.SnippetViewModel>
+
+@{
+    ViewBag.Title = "Language " + ViewBag.languageName;
+}
+
+<h1 class="display-inline-block">All snippets for language</h1>
+<button class="btn btn-success">@ViewBag.languageName</button>
+@Html.DisplayForModel()

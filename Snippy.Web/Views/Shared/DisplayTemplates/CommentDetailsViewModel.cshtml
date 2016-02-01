@@ -1,0 +1,15 @@
+﻿@using Microsoft.AspNet.Identity
+@model Snippy.Web.Models.ViewModels.CommentDetailsViewModel
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <p class="display-inline-block">@Model.Content</p>
+        @if (@Model.UserUserName == User.Identity.GetUserName())
+            {
+            @Html.ActionLink("X", "DeleteComment", "Comments", new { id = Model.Id }, new { @class = "gray-x display-inline-block float-right margin-top-short" })
+            }
+        <p>
+            <span class="glyphicon glyphicon-user"></span> <b>@Model.UserUserName</b> on @Model.CreationTime
+        </p>
+    </div>
+</div>

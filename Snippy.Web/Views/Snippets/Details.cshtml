@@ -1,0 +1,81 @@
+﻿@using Microsoft.AspNet.Identity
+@model Snippy.Web.Models.ViewModels.SnippetDetailsViewModel
+
+@{
+    ViewBag.Title = @Model.Title;
+}
+
+<div class="container margin-top">
+    <div>
+        @Html.ActionLink(@Model.LanguageName, "AllSnippetsForLanguage", "Languages", new { id = Model.LanguageId }, new { @class = "btn btn-success display-inline-block" })
+        <h1 class="display-inline-block">@Model.Title</h1>
+        @if (this.User.Identity.GetUserName() == Model.UserUserName)
+        {
+            @Html.ActionLink("Edit", "Edit", "Snippets", new {id = Model.Id}, new {@class= "display-inline-block btn btn-warning" })
+        }
+    </div>
+    <p>by <span class="glyphicon glyphicon-user"></span><b>@Model.UserUserName</b> on @Model.CreationTime</p>
+    <p>
+        Labels :
+        @foreach (var label in Model.Labels)
+        {
+            
+            @Html.ActionLink(@label.Text, "AllSnippetsForLabel", "Labels", new { labelId = label.Id}, new { @class = "btn btn-primary" })
+            
+        }
+    </p>
+    <p>
+        @Model.Description
+    </p>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            @Model.Code
+        </div>
+    </div>
+
+    <div>
+        <h2>Comments:</h2>
+        @if (@Model.Comments.Any())
+        {
+            <div id="comments">
+                @Html.DisplayFor(x => x.Comments)
+            </div>
+        }
+        else
+        {
+            <p>There are no comments right now</p>
+        }
+    </div>
+    @if (this.User.Identity.IsAuthenticated)
+    {
+        <div>
+            @using (Ajax.BeginForm("Add", "Comments", new { matchId = Model.Id }, new AjaxOptions()
+            {
+                HttpMethod = "POST",
+                InsertionMode = InsertionMode.InsertBefore,
+                UpdateTargetId = "comments",
+                OnSuccess = "onAddCommentSuccess"
+            }))
+            {
+                @Html.AntiForgeryToken()
+                <label for="content">Comment:</label>
+                <textarea class="form-control" type="text" id="content" name="content" value=""></textarea>
+                <br />
+                <input type="submit" class="btn btn-primary" name="submit" value="Comment" />
+            }
+        </div>
+    }
+</div>
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/ajax")
+    
+    <script src="~/Scripts/highlight/highlight.pack.js"></script>
+    <script>
+        function onAddCommentSuccess() {
+            document.getElementById('content').value = '';
+        }
+    </script>
+    <script>hljs.initHighlightingOnLoad();</script>
+}

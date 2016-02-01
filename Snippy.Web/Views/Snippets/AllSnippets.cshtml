@@ -1,0 +1,14 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<Snippy.Web.Models.ViewModels.SnippetViewModel>
+
+@{
+    ViewBag.Title = "All snippets";
+}
+
+<div class="container top-margin-distance">
+    <h1>All snippets</h1>
+    <div class="row">
+        @Html.DisplayFor(x => x)
+    </div>
+    @Html.PagedListPager(Model, page => Url.Action("AllSnippets", new { page, Model.PageSize }))
+</div>

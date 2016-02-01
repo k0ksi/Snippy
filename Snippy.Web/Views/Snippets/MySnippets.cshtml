@@ -1,0 +1,19 @@
+﻿@model System.Linq.IQueryable<Snippy.Web.Models.ViewModels.SnippetViewModel>
+
+@{
+    ViewBag.Title = "My Snippets";
+}
+
+<h1>My Snippets</h1>
+@if (!@Model.Any())
+{
+    <p>
+        You have no snippets. You can
+        @Html.ActionLink("create", "Add", "Snippets", null, null)
+        one now.
+    </p>
+}
+else
+{
+    @Html.DisplayForModel()
+}

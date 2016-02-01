@@ -1,0 +1,3 @@
+﻿@model Snippy.Web.Models.ViewModels.LabelDetailsViewModel
+
+<li>@Html.ActionLink(@Model.Text + "    " + @Model.SnippetCount, "AllSnippetsForLabel", "Labels", new { labelId = Model.Id }, null)</li>

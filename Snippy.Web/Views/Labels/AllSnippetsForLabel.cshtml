@@ -1,0 +1,9 @@
+﻿@model System.Linq.IQueryable<Snippy.Web.Models.ViewModels.SnippetViewModel>
+
+@{
+    ViewBag.Title = "Label " + @ViewBag.labelName;
+}
+
+<h1 class="display-inline-block"><b>All snippets with label</b></h1>
+<button class="btn btn-primary size16"><b>@ViewBag.labelName</b></button>
+@Html.DisplayForModel()

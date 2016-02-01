@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{F1FA2247-3C5D-4F15-976C-ED10D90A50C7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{31881144-6612-42CC-85BA-E674E7B55EBB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{BB20765E-ED9D-4EA2-9506-0490078D28B7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External Libraries", "External Libraries", "{900164AB-EA62-457B-9F86-316A6921F8C4}"
+	ProjectSection(SolutionItems) = preProject
+		..\SportSystem\External Libraries\System.Web.Mvc.Expressions.dll = ..\SportSystem\External Libraries\System.Web.Mvc.Expressions.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snippy.Web", "Snippy.Web\Snippy.Web.csproj", "{9B43B39F-8496-46EF-BD4F-041E127D67E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snippy.Common", "Snippy.Common\Snippy.Common.csproj", "{EA394A27-8436-458C-8836-C699B0666814}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snippy.Data", "Snippy.Data\Snippy.Data.csproj", "{FE636F2B-7239-4501-AF3E-C41991948EDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snippy.Models", "Snippy.Models\Snippy.Models.csproj", "{E3826D3B-A4BB-4C32-9D8F-054320F50F16}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9B43B39F-8496-46EF-BD4F-041E127D67E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B43B39F-8496-46EF-BD4F-041E127D67E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B43B39F-8496-46EF-BD4F-041E127D67E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B43B39F-8496-46EF-BD4F-041E127D67E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA394A27-8436-458C-8836-C699B0666814}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA394A27-8436-458C-8836-C699B0666814}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA394A27-8436-458C-8836-C699B0666814}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA394A27-8436-458C-8836-C699B0666814}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE636F2B-7239-4501-AF3E-C41991948EDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE636F2B-7239-4501-AF3E-C41991948EDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE636F2B-7239-4501-AF3E-C41991948EDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE636F2B-7239-4501-AF3E-C41991948EDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3826D3B-A4BB-4C32-9D8F-054320F50F16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3826D3B-A4BB-4C32-9D8F-054320F50F16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3826D3B-A4BB-4C32-9D8F-054320F50F16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3826D3B-A4BB-4C32-9D8F-054320F50F16}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9B43B39F-8496-46EF-BD4F-041E127D67E3} = {F1FA2247-3C5D-4F15-976C-ED10D90A50C7}
+		{EA394A27-8436-458C-8836-C699B0666814} = {BB20765E-ED9D-4EA2-9506-0490078D28B7}
+		{FE636F2B-7239-4501-AF3E-C41991948EDB} = {31881144-6612-42CC-85BA-E674E7B55EBB}
+		{E3826D3B-A4BB-4C32-9D8F-054320F50F16} = {31881144-6612-42CC-85BA-E674E7B55EBB}
+	EndGlobalSection
+EndGlobal

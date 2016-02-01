@@ -1,0 +1,20 @@
+﻿@model Snippy.Web.Models.ViewModels.HomePageViewModel
+
+<div class="container">
+    <div class="home-page-first float-left">
+        <h1>Latest snippets:</h1>
+        @Html.DisplayFor(x => x.Snippets)
+    </div>
+
+    <div class="home-page-second float-left">
+        <h1>Latest comments:</h1>
+        @Html.DisplayFor(x => x.Comments)
+    </div>
+
+    <div class="home-page-third float-right">
+        <ul class="nav nav-pills nav-stacked">
+            <li class="active"><a href="#">Best labels</a></li>
+            @Html.DisplayFor(x => x.Labels)
+        </ul>
+    </div>
+</div>
