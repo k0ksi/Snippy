@@ -17,6 +17,8 @@ using Microsoft.AspNet.Identity;
 
 namespace Snippy.Web.Controllers
 {
+    using System.Threading.Tasks;
+
     public class SnippetsController : BaseController
     {
         public SnippetsController(ISnippyData data) : base(data)
@@ -24,12 +26,13 @@ namespace Snippy.Web.Controllers
         }
 
         [Authorize]
-        public ActionResult MySnippets()
+        public async Task<ActionResult> MySnippets()
         {
-            var snippets = this.Data.Snippets
+            var snippets = await this.Data.Snippets
                 .All()
                 .Where(s => s.UserId == this.UserProfile.Id)
-                .ProjectTo<SnippetViewModel>();
+                .ProjectTo<SnippetViewModel>()
+                .ToListAsync();
 
             return this.View(snippets);
         }
